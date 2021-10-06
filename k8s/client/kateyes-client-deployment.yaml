@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: kateyes-client-deployment
+    component: client
+  name: kateyes-client-deployment
+  namespace: kateyes
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: kateyes-client-deployment
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: kateyes-client-deployment
+    spec:
+      containers:
+      - image: vikramnagarkar/kateyes-client:latest
+        name: kateyes-client
+        ports:
+        - containerPort: 3000
+        resources:
+          limits:
+            cpu: 0.5 
+            memory: 2Gi
+          requests:
+            cpu: 0.5
+            memory: 2Gi
+

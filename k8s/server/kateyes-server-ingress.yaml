@@ -1,0 +1,21 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: kateyes-server-ingress
+  namespace: kateyes
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    nginx.ingress.kubernetes.io/rewrite-target: /$2
+    #nginx.ingress.kubernetes.io/ssl-redirect: "false"
+spec:
+  rules:
+  - http:
+      paths:
+      - backend:
+          service:
+            name: kateyes-server-svc
+            port:
+              number: 80
+        pathType: Prefix
+        path: /api(/|$)(.*)
+              

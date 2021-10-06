@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: kateyes-server-deployment
+    component: server
+  name: kateyes-server-deployment
+  namespace: kateyes
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: kateyes-server-deployment
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: kateyes-server-deployment
+    spec:
+      serviceAccount: kateyes-sa
+      containers:
+      - image: vikramnagarkar/kateyes-server:latest
+        name: kateyes-server
+        ports:
+        - containerPort: 5000
+
