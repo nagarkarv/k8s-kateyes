@@ -10,7 +10,7 @@ metadata:
   name: pods-list
 rules:
 - apiGroups: [""]
-  resources: ["pods","services","namespaces"]
+  resources: ["pods","services","namespaces","endpoints"]
   verbs: ["list"]
 - apiGroups: ["apps"]
   resources: ["deployments"]
