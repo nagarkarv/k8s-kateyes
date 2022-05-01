@@ -13,7 +13,7 @@ rules:
   resources: ["pods","services","namespaces","endpoints"]
   verbs: ["list"]
 - apiGroups: ["apps"]
-  resources: ["deployments", "replicaset"]
+  resources: ["deployments", "replicasets"]
   verbs: ["list"]
 - apiGroups: ["networking.k8s.io"]
   resources: ["ingresses"]
