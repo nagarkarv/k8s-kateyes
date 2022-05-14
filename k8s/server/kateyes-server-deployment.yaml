@@ -20,7 +20,7 @@ spec:
     spec:
       serviceAccount: kateyes-sa
       containers:
-      - image: vikramnagarkar/kateyes-server:v0.0.1-beta-004
+      - image: vikramnagarkar/kateyes-server:v0.0.1-beta-005
         name: kateyes-server
         ports:
         - containerPort: 5000
