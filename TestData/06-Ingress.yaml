@@ -1,0 +1,40 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: student-portal-ingress
+  namespace: dev-env 
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+    kubernetes.io/ingress.class: testclass
+spec:
+  rules:
+  - http:
+      paths:
+      - backend:
+          service:
+            name: student-portal 
+            port:
+              number: 8090
+        pathType: Prefix
+        path: /
+---              
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: exam-ingress
+  namespace: dev-env 
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+    kubernetes.io/ingress.class: exam-class
+spec:
+  rules:
+  - http:
+      paths:
+      - backend:
+          service:
+            name: exam-portal 
+            port:
+              number: 8090
+        pathType: Prefix
+        path: /
+              

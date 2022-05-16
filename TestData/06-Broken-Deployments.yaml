@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: i-am-broken
+  name: i-am-broken
+  namespace: dev-env
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: i-am-broken 
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: i-am-broken
+    spec:
+      containers:
+      - image: idontexist:latest
+        name: idontexist
+        ports:
+        - containerPort: 1010
+        resources: {}
+status: {}

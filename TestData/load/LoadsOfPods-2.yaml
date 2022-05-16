@@ -1,0 +1,33 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  creationTimestamp: null
+  name: perf-env
+spec: {}
+status: {}
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: loads-of-pods-2
+  name: loads-of-pods-2
+  namespace: perf-env
+spec:
+  replicas: 20
+  selector:
+    matchLabels:
+      app: loads-of-pods-2
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: loads-of-pods-2
+    spec:
+      containers:
+      - image: busybox 
+        name: i-am-busybox
+        resources: {}
+status: {}

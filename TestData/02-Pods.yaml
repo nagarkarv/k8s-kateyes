@@ -1,0 +1,170 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: null
+  labels:
+    run: front-end
+  name: front-end
+  namespace: dev-env
+spec:
+  containers:
+  - image: nginx:latest
+    name: front-end
+    ports:
+    - containerPort: 8080
+    resources: {}
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
+status: {}
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: null
+  labels:
+    run: backend-end
+  name: backend-end
+  namespace: dev-env
+spec:
+  containers:
+  - image: node:latest
+    name: backend-end
+    ports:
+    - containerPort: 8081
+    resources: {}
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
+status: {}
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: null
+  labels:
+    run: backend-mysql-db
+  name: backend-mysql-db
+  namespace: dev-env
+spec:
+  containers:
+  - image: mysql:latest
+    name: backend-mysql-db
+    ports:
+    - containerPort: 8082
+    resources: {}
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
+status: {}
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: null
+  labels:
+    run: front-end
+  name: front-end
+  namespace: uat-env
+spec:
+  containers:
+  - image: nginx:latest
+    name: front-end
+    ports:
+    - containerPort: 8080
+    resources: {}
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
+status: {}
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: null
+  labels:
+    run: front-end
+  name: front-end
+  namespace: prod-env
+spec:
+  containers:
+  - image: nginx:latest
+    name: front-end
+    ports:
+    - containerPort: 8080
+    resources: {}
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
+status: {}
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: null
+  labels:
+    run: backend-mysql-db
+  name: backend-mysql-db
+  namespace: uat-env
+spec:
+  containers:
+  - image: mysql:latest
+    name: backend-mysql-db
+    ports:
+    - containerPort: 8082
+    resources: {}
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
+status: {}
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: null
+  labels:
+    run: backend-mysql-db
+  name: backend-mysql-db
+  namespace: prod-env
+spec:
+  containers:
+  - image: mysql:latest
+    name: backend-mysql-db
+    ports:
+    - containerPort: 8082
+    resources: {}
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
+status: {}
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: null
+  labels:
+    run: backend-mysql-db
+  name: backend-mysql-db
+  namespace: uat-env
+spec:
+  containers:
+  - image: mysql:latest
+    name: backend-mysql-db
+    ports:
+    - containerPort: 8082
+    resources: {}
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
+status: {}
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: null
+  labels:
+    run: backend-mysql-db
+  name: backend-mysql-db
+  namespace: prod-env
+spec:
+  containers:
+  - image: mysql:latest
+    name: backend-mysql-db
+    ports:
+    - containerPort: 8082
+    resources: {}
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
+status: {}
