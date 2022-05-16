@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: multipod-deployment
+    pods: three
+  name: multipod-deployment
+  namespace: uat-env
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: multipod-deployment
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: multipod-deployment
+    spec:
+      containers:
+      - image: nginx
+        name: nginx-1
+        ports:
+        - containerPort: 8585
+      - image: nginx-broken
+        name: nginx-2
+        ports:
+        - containerPort: 8586
+      - image: nginx
+        name: nginx-3
+        ports:
+        - containerPort: 8587
+        resources: {}
+status: {}

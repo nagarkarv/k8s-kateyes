@@ -1,0 +1,33 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  creationTimestamp: null
+  name: perf-env
+spec: {}
+status: {}
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: loads-of-pods
+  name: loads-of-pods
+  namespace: perf-env
+spec:
+  replicas: 20
+  selector:
+    matchLabels:
+      app: loads-of-pods
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: loads-of-pods
+    spec:
+      containers:
+      - image: nginx
+        name: nginx
+        resources: {}
+status: {}
