@@ -4,7 +4,7 @@ metadata:
   name: kateyes-server-ingress
   namespace: kateyes
   annotations:
-    kubernetes.io/ingress.class: nginx
+    kubernetes.io/ingress.class: kateyes-nginx
     nginx.ingress.kubernetes.io/rewrite-target: /$2
     #nginx.ingress.kubernetes.io/ssl-redirect: "false"
 spec:
