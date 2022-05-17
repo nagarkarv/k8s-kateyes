@@ -12,7 +12,7 @@ There is a standard tool 'kubectl' that most of us would use to explore the clus
 And just imagine you are handed over a cluster that has grown in the past years from its previous owner!
 
 ## Features
-In its first beta release, Kateyes provides a deep insights of your applications deployed in the cluster and most importantly the relationships between few of its important kubernetes objects in a explorable tree format. The relationship is limited to a specific namespace for now. The following objects are supported. 
+In its first beta release, Kateyes provides a deep insights of your applications deployed in the cluster and most importantly the relationships between few of its important kubernetes objects in a explorable tree format. The relationship is limited to a single namespace for now. The following objects are supported and we may add more objects in future releases.
 - [namespace](https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/)
 - [pods](https://kubernetes.io/docs/concepts/workloads/pods/)
 - [deployment](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/)
@@ -50,6 +50,14 @@ kubectl apply -f install/.
 ```
 This will install the client and server into a dedicated namespace 'kateyes'. It also deploys an nginx ingress controller configured with class name as 'kateyes-nginx'. After successfull deployment, you should get an external loadbalancer ip for the controller which can be used to access the application.
 
+Use the following command to grab the LoadBalancer IP
+
+```bash
+$ kubectl get svc -n kateyes ingress-nginx-controller
+NAME                       TYPE           CLUSTER-IP   EXTERNAL-IP     PORT(S)                      AGE
+ingress-nginx-controller   LoadBalancer   10.72.9.38   <THIS-IP>       80:31974/TCP,443:31568/TCP   76s
+```
+
 **NOTE:**
 While deploying you may get an error message 'no endpoints available for service "ingress-nginx-controller-admission'. To resolve, wait for a short while for the endpoints to get registered and re-run the command again.
 
@@ -75,15 +83,15 @@ kubectl apply -f TestData/.
 The TestData folder includes a folder 'load' which has manifests to deploy a large number of pods(40).
 
 ## Examples
-'kube-system' namespace
+Exploring 'kube-system' namespace
 
 ![plot](./images/kube-system.png)
 
-'kubernates-dashboard' namespace
+Exploring 'kubernetes-dashboard' namespace
 
 ![plot](./images/kubernetes-dashboard.png)
 
-Sample TestData 'prod-env' namespace
+Exploring 'prod-env' namespace (from TestData)
 
 ![plot](./images/prd-env.png)
 
