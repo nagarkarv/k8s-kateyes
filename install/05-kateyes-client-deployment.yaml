@@ -19,7 +19,7 @@ spec:
         app: kateyes-client-deployment
     spec:
       containers:
-      - image: vikramnagarkar/kateyes-client:latest
+      - image: vikramnagarkar/kateyes-client:v0.0.1-beta-006
         name: kateyes-client
         ports:
         - containerPort: 3000
