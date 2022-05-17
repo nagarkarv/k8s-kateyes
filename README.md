@@ -1,4 +1,4 @@
-TEYES ™ - Visual Kubernetes Explorer ##
+KATEYES™ - Visual Kubernetes Explorer ##
 
 ## Introduction
 
@@ -16,6 +16,24 @@ In its first Beta release, it provides a deep insights of your applications depl
 - [service](https://kubernetes.io/docs/concepts/services-networking/service/)
 - [ingress](https://kubernetes.io/docs/concepts/services-networking/ingress/)
 - [service endpoints](https://kubernetes.io/docs/concepts/services-networking/service/)
+
+## Installation Requirements
+
+You may incur cost to deploy the application into the cluster depending on your cloud subscriptions
+
+## Compatibility
+
+This application has been tested on Google Kubernetes Engine (GKE)
+
+```bash
+$ kubectl version
+Client Version: version.Info{Major:"1", Minor:"23", GitVersion:"v1.23.6", GitCommit:"ad3338546da947756e8a88aa6822e9c11e7eac22", GitTreeState:"clean", BuildDate:"2022-04-14T08:49:13Z", GoVersion:"go1.17.9", Compiler:"gc", Platform:"linux/amd64"}
+Server Version: version.Info{Major:"1", Minor:"21", GitVersion:"v1.21.10-gke.2000", GitCommit:"0823380786b063c3f71d5e7c76826a972e30550d", GitTreeState:"clean", BuildDate:"2022-03-17T09:22:22Z", GoVersion:"go1.16.14b7", Compiler:"gc", Platform:"linux/amd64"}
+
+$ kubectl version --short
+Client Version: v1.23.6
+Server Version: v1.21.10-gke.2000
+```
 
 ## How to Deploy
 
@@ -38,7 +56,26 @@ If you do not want to deploy a new ingress controller and would like to connect 
 3. Apply the changed configurations.
 
 
+## TestData
+
+If you want to use a new empty cluster to check the application, a TestData folder has been included containing a set of manifests that can be installed into the cluster. Once deployed it can be explored using Kateyes™
+
+Use the command below to install the TestData
+
+```bash
+kubectl apply -f TestData/.
+```
+
+The TestData folder includes a folder 'load' which has manifests to deploy a large number of pods(40).
+
 ## Examples
-A view of kube-system namespace
+'kube-system' namespace
+
 ![plot](./images/kube-system.png)
 
+'kubernates-dashboard' namespace
+
+![plot](./images/kubernetes-dashboard.png)
+
+Sample TestData 'prod-env' namespace
+![plot](./images/prd-env.png)
