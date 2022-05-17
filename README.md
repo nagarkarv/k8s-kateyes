@@ -1,14 +1,18 @@
-KATEYES™ - Visual Kubernetes Explorer ##
+# KATEYES™ (beta) - Visual Kubernetes Explorer
 
 ## Introduction
 
 Kateyes™ is a client server application that provides an eye into your kubernetes cluster. To visualize the cluster, kateyes - beta needs to be deployed into the cluster. 
 
 ## Motivation
-Kubernetes is hard. But it solves lots of key problems that we have been experincing in the good old days. When an application gets deployed into the cluster, there are a set of kubernetes objects that get created with certain relationships between them. As the cluster grows and you deploy more and more applications, it gets seriously complex. There is a standard tool 'kubectl' that most of us would use to explore the cluster but then you need to understand how to use it to get the best results in a short time. More over you would need to fire atleast a couple of kubectl commands with different options to find out something within your cluster. And just imagine you are handed over a cluster from a previous owner! 
+Kubernetes is hard. But it solves lots of key problems that we have been experincing in the good old days. When an application gets deployed into the cluster, there are a set of kubernetes objects that get created with certain relationships between them. As the cluster grows and you deploy more and more applications, it gets seriously complex.
+
+There is a standard tool 'kubectl' that most of us would use to explore the cluster but then you need to understand how to use it to get the best results in a short time. More over you would need to fire atleast a couple of kubectl commands with different options to find out related information from within your cluster. 
+
+And just imagine you are handed over a cluster that has grown in the past years from a previous owner!
 
 ## Feautures
-In its first Beta release, it provides a deep insights of your applications deployed in the cluster and most importantly the relationships between few of its important kubernetes objects in a explorable tree format. The relationship is limited to a specific namespace for now. The following objects are supported. 
+In its first Beta release, Kateyes provides a deep insights of your applications deployed in the cluster and most importantly the relationships between few of its important kubernetes objects in a explorable tree format. The relationship is limited to a specific namespace for now. The following objects are supported. 
 - [namespace](https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/)
 - [pods](https://kubernetes.io/docs/concepts/workloads/pods/)
 - [deployment](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/)
@@ -78,4 +82,6 @@ The TestData folder includes a folder 'load' which has manifests to deploy a lar
 ![plot](./images/kubernetes-dashboard.png)
 
 Sample TestData 'prod-env' namespace
+
 ![plot](./images/prd-env.png)
+
