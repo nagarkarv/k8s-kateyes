@@ -5,14 +5,14 @@
 Kateyes™ is a client server application that provides an eye into your kubernetes cluster. To visualize the cluster, kateyes - beta needs to be deployed into the cluster. 
 
 ## Motivation
-Kubernetes is hard. But it solves lots of key problems that we have been experincing in the good old days. When an application gets deployed into the cluster, there are a set of kubernetes objects that get created with certain relationships between them. As the cluster grows and you deploy more and more applications, it gets seriously complex.
+Kubernetes is hard! but it solves lots of key problems that we have been experincing in the good old days. When an application gets deployed into the cluster, there are a set of kubernetes objects that get created with certain relationships between them. As the cluster grows and you deploy more and more applications, it gets seriously complex.
 
 There is a standard tool 'kubectl' that most of us would use to explore the cluster but then you need to understand how to use it to get the best results in a short time. More over you would need to fire atleast a couple of kubectl commands with different options to find out related information from within your cluster. 
 
-And just imagine you are handed over a cluster that has grown in the past years from a previous owner!
+And just imagine you are handed over a cluster that has grown in the past years from its previous owner!
 
-## Feautures
-In its first Beta release, Kateyes provides a deep insights of your applications deployed in the cluster and most importantly the relationships between few of its important kubernetes objects in a explorable tree format. The relationship is limited to a specific namespace for now. The following objects are supported. 
+## Features
+In its first beta release, Kateyes provides a deep insights of your applications deployed in the cluster and most importantly the relationships between few of its important kubernetes objects in a explorable tree format. The relationship is limited to a specific namespace for now. The following objects are supported. 
 - [namespace](https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/)
 - [pods](https://kubernetes.io/docs/concepts/workloads/pods/)
 - [deployment](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/)
@@ -23,7 +23,7 @@ In its first Beta release, Kateyes provides a deep insights of your applications
 
 ## Installation Requirements
 
-You may incur cost to deploy the application into the cluster depending on your cloud subscriptions
+You will need a working kubernetes cluster and may incur cost depending on your cloud subscriptions.
 
 ## Compatibility
 
@@ -41,7 +41,9 @@ Server Version: v1.21.10-gke.2000
 
 ## How to Deploy
 
-The client server app is easy to deploy. This repository consists of a several yaml manifests in "install" folder that needs to be applied with a simple command as below
+Kateyes is easy to deploy.
+
+This repository consists of a several yaml manifests in the "install" folder that needs to be applied with a simple command as below
 
 ```bash
 kubectl apply -f install/.
@@ -49,10 +51,10 @@ kubectl apply -f install/.
 This will install the client and server into a dedicated namespace 'kateyes'. It also deploys an nginx ingress controller configured with class name as 'kateyes-nginx'. After successfull deployment, you should get an external loadbalancer ip for the controller which can be used to access the application.
 
 **NOTE:**
-While deploying you may get an error message 'no endpoints available for service "ingress-nginx-controller-admission'. To resolve, wait for a short time for the endpoints to get registered and re-run the command aganin.
+While deploying you may get an error message 'no endpoints available for service "ingress-nginx-controller-admission'. To resolve, wait for a short while for the endpoints to get registered and re-run the command again.
 
 ## Custom Ingress
-If you do not want to deploy a new ingress controller and would like to connect to your existing controller
+If you do not want to deploy a new ingress controller and would like to connect to your existing controller in the cluster
 1. Do not apply the file '01-kateyes-nginx-ingress-ctrl.yaml'
 2. Update the annotations kubernetes. io/ingress. class with appropriate ingress class 
    - 05-kateyes-client-ingress.yaml
@@ -64,7 +66,7 @@ If you do not want to deploy a new ingress controller and would like to connect 
 
 If you want to use a new empty cluster to check the application, a TestData folder has been included containing a set of manifests that can be installed into the cluster. Once deployed it can be explored using Kateyes™
 
-Use the command below to install the TestData
+Use the command below to install  TestData
 
 ```bash
 kubectl apply -f TestData/.
@@ -85,3 +87,5 @@ Sample TestData 'prod-env' namespace
 
 ![plot](./images/prd-env.png)
 
+## LICENSE
+The Kateyes™ beta is licensed under MIT License
