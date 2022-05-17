@@ -36,8 +36,9 @@ If you do not want to deploy a new ingress controller and would like to connect 
    - 05-kateyes-client-ingress.yaml
    - 05-kateyes-server-ingress.yaml
 3. Apply the changed configurations.
-4. 
 
 
-
+## Examples
+A view of kube-system namespace
+![plot](./images/kube-system.png)
 
