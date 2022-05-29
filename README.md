@@ -41,8 +41,8 @@ Server Version: v1.21.10-gke.2000
 
 ## Docker Hub
 
-Client: https://hub.docker.com/repository/docker/kateyes/kateyes-client 
-Server: https://hub.docker.com/repository/docker/kateyes/kateyes-server 
+- Client: https://hub.docker.com/repository/docker/kateyes/kateyes-client 
+- Server: https://hub.docker.com/repository/docker/kateyes/kateyes-server 
 
 ## How to Deploy
 
