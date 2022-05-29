@@ -39,6 +39,11 @@ Client Version: v1.23.6
 Server Version: v1.21.10-gke.2000
 ```
 
+## Docker Hub
+
+Client: https://hub.docker.com/repository/docker/kateyes/kateyes-client 
+Server: https://hub.docker.com/repository/docker/kateyes/kateyes-server 
+
 ## How to Deploy
 
 Kateyes is easy to deploy.
@@ -83,6 +88,11 @@ kubectl apply -f TestData/.
 The TestData folder includes a folder 'load' which has manifests to deploy a large number of pods(40).
 
 ## Examples
+
+Exploring 'default' namespace
+
+![plot](./images/default-namespace.png)
+
 Exploring 'kube-system' namespace
 
 ![plot](./images/kube-system.png)
