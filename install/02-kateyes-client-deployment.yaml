@@ -21,6 +21,7 @@ spec:
       containers:
       - image: kateyes/kateyes-client:v0.0.1-beta-006
         name: kateyes-client
+        imagePullPolicy: Always
         ports:
         - containerPort: 3000
         resources:

@@ -107,3 +107,6 @@ Exploring 'prod-env' namespace (from TestData)
 
 ## LICENSE
 The Kateyes™ beta is licensed under MIT License
+
+## Contact
+- info@kateyes.co.uk
