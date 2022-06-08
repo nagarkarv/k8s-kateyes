@@ -5,7 +5,7 @@ metadata:
     app: kateyes-sa-deployment
     component: kateyes 
   name: kateyes-sa-deployment
-  namespace: kateyes
+  namespace: kateyes-sa
 spec:
   replicas: 1
   selector:

@@ -5,7 +5,7 @@ metadata:
     app: kateyes-sa-deployment
     component: kateyes 
   name: kateyes-sa-svc
-  namespace: kateyes
+  namespace: kateyes-sa
 spec:
   ports:
   - port: 80
