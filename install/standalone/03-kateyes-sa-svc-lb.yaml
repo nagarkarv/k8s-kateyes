@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: kateyes-sa-deployment
+    component: kateyes 
+  name: kateyes-sa-svc
+  namespace: kateyes
+spec:
+  ports:
+  - port: 80
+    protocol: TCP
+    targetPort: 3000
+    name: client
+  - port: 8000
+    protocol: TCP
+    targetPort: 5000
+    name: server
+  selector:
+    app: kateyes-sa-deployment
+  type: LoadBalancer
+status:
+  loadBalancer: {}
