@@ -19,8 +19,8 @@ spec:
     spec:
       serviceAccount: kateyes-sa
       containers:
-      - image: vikram/kateyes-sa:latest
-        name: kateyes-server
+      - image: vikramnagarkar/kateyes-sa:latest
+        name: kateyes-sa
         imagePullPolicy: Always
         ports:
         - name: client 
