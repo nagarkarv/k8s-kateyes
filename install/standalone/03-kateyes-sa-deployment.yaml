@@ -17,7 +17,7 @@ spec:
       labels:
         app: kateyes-sa-deployment
     spec:
-      serviceAccount: kateyes-sa
+      serviceAccount: kateyes-sa-sa
       containers:
       - image: vikramnagarkar/kateyes-sa:latest
         name: kateyes-sa
