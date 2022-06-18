@@ -77,6 +77,24 @@ If you do not want to deploy a new ingress controller and would like to connect 
 3. Apply the changed configurations.
 
 
+## Minikube Support
+
+A standalone version of kateyes beta is now avaliable that can be deployed on minikube. In fact the same can also be deployed on GKE cluster without requiriing an ingress-controller. You can access the UI using the load balancer IP. You would need to allow port 3000 server communicatoins which cannot be changed for now.
+
+Deployment instructions
+
+```bash
+minikube start --cni calico
+minikube tunnel
+kubectl apply -f install/standalone/.
+kubectl get svc -n kateyes-sa (usually 127.0.0.1)
+
+```
+URL - http://127.0.0.1
+
+**NOTE:**
+Provide permissions to the tunnel to start it for service kateyes-sa-svc if required.
+
 ## TestData
 
 If you want to use a new empty cluster to check the application, a TestData folder has been included containing a set of manifests that can be installed into the cluster. Once deployed it can be explored using Kateyes™
