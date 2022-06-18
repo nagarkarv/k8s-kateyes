@@ -85,12 +85,20 @@ Deployment instructions
 
 ```bash
 minikube start --cni calico
-minikube tunnel
+minikube tunnel (execute in a new terminal window)
 kubectl apply -f install/standalone/.
 kubectl get svc -n kateyes-sa (usually 127.0.0.1)
 
 ```
 URL - http://127.0.0.1
+Minikube Start
+![plot](./images/minikube-start.png)
+
+Minikube Deployment
+![plot](./images/minikube-deployment.png)
+
+Minikube Tunnel
+![plot](./images/minikube-tunnel.png)
 
 **NOTE:**
 Provide permissions to the tunnel to start it for service kateyes-sa-svc if required.
