@@ -19,7 +19,7 @@ spec:
     spec:
       serviceAccount: kateyes-sa-sa
       containers:
-      - image: vikramnagarkar/kateyes-sa:latest
+      - image: kateyes/kateyes-sa:v0.0.1-beta-007
         name: kateyes-sa
         imagePullPolicy: Always
         ports:
