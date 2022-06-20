@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: kateyes-sa-deployment
+    component: kateyes 
+  name: kateyes-sa-deployment
+  namespace: kateyes-sa
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: kateyes-sa-deployment
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: kateyes-sa-deployment
+    spec:
+      serviceAccount: kateyes-sa-sa
+      containers:
+      - image: kateyes/kateyes-sa:v0.0.1-beta-007
+        name: kateyes-sa
+        imagePullPolicy: Always
+        ports:
+        - name: client 
+          containerPort: 3000
+        - name: server 
+          containerPort: 5000
