@@ -5,10 +5,10 @@ metadata:
   namespace: kateyes
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
-    kubernetes.io/ingress.class: kateyes-nginx
     #nginx.ingress.kubernetes.io/rewrite-target: /$2
     #nginx.ingress.kubernetes.io/ssl-redirect: "false"
 spec:
+  ingressClassName: kateyes-nginx
   rules:
   - http:
       paths:
